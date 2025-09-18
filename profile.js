@@ -1,25 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Copy to clipboard
-  const icons = document.querySelectorAll(".copy-icon");
-  icons.forEach((icon) => {
-    icon.addEventListener("click", function () {
-      const text = this.getAttribute("data-copy");
-      const copiedText = this.parentElement.querySelector(".copied-text");
-      navigator.clipboard
-        .writeText(text)
-        .then(() => {
-          copiedText.classList.add("show");
-          setTimeout(() => {
-            copiedText.classList.remove("show");
-          }, 1500);
-        })
-        .catch((err) => {
-          console.error("Copy failed", err);
-        });
-    });
-  });
-
-  // Mobile nav open/close
   const navBar = document.querySelector(".nav-bar");
   const navMobile = document.querySelector(".nav_mobile");
   const navClose = document.querySelector(".nav_close");
